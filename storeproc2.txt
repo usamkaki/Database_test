@@ -1,0 +1,15 @@
+CREATE OR REPLACE PROCEDURE display_message (INOUT Msg TEXT)
+
+AS $$
+
+BEGIN
+
+RAISE NOTICE 'Procedure Parameter: %',msg;
+
+END;
+
+$$
+
+LANGUAGE Plpgsql;
+
+CALL display_message ('Welcome to kloudone');
