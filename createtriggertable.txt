@@ -1,0 +1,6 @@
+CREATE TABLE log(id INT,
+emp_name VARCHAR(100),
+emp_sal INT,
+log_Action VARCHAR(100),
+log_Timestamp Datetime);
+GO

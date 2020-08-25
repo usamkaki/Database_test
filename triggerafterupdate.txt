@@ -1,0 +1,22 @@
+REATE TRIGGER AfterUpdate ON employee
+ AFTER UPDATE
+ AS
+ declare @empid int;
+ declare @empname VARCHAR(100);
+ declare @empsal int;
+ declare @log_action VARCHAR(100); 
+ SELECT @empid=i.id,@empname=i.emp_name,@empsal=i.emp_sal from inserted i;
+ if update (emp_name)
+ set @log_action =’updated Record – After Update Trigger.’;
+if update(emp_sal)
+set @log_action =’updated Record – After Update Trigger.’;
+ INSERT INTO log(id,emp_name,emp_sal,log_Action,log_Timestamp)
+ VALUES(@empid,@empname,@empsal,@log_action,getdate());
+PRINT 'AFTER UPDATE TRIGGER FIRED.'
+GO
+
+Update table employee set emp_sal=12000 where emp_name=’Tahir’;
+GO
+
+SELECT * FROM log;
+GO

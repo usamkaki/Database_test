@@ -1,0 +1,21 @@
+CREATE DATABASE sample
+
+GO
+
+USE DATABASE sample
+
+CREATE TABLE employee(id INT Identity,
+emp_name VARCHAR(100),
+emp_sal INT);
+
+INSERT INTO employee VALUES (‘Hemanth’,15000);
+INSERT INTO employee VALUES (‘Taha’,16000);
+INSERT INTO employee VALUES (‘Vijay’,13000);
+INSERT INTO employee VALUES (‘Ajay’,18000);
+INSERT INTO employee VALUES (‘Navin’,15000);
+INSERT INTO employee VALUES (‘Hemanth R’,10000);
+
+GO
+
+SELECT * FROM employee;
+GO

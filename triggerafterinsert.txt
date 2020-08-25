@@ -1,0 +1,21 @@
+CREATE TRIGGER AfterInsert ON employee
+ AFTER INSERT
+ AS
+ declare @empid int;
+ declare @empname VARCHAR(100);
+ declare @empsal int;
+ declare @log_action VARCHAR(100); 
+ SELECT @empid=i.id,@empname=i.emp_name,@empsal=i.emp_sal from inserted i;
+ set @log_action='Inserted Record -- After Insert Trigger.';
+ INSERT INTO log(id,emp_name,emp_sal,log_Action,log_Timestamp)
+ VALUES(@empid,@empname,@empsal,@log_action,getdate());
+PRINT 'AFTER INSERT TRIGGER FIRED.'
+GO
+
+INSERT INTO employee VALUES (‘Tahir’,19000);
+INSERT INTO employee VALUES (‘Mohammed Salik’,19000);
+
+SELECT  * FROM employee;
+GO
+SELECT  * FROM log
+GO

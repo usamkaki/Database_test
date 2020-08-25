@@ -1,0 +1,20 @@
+
+CREATE TRIGGER AfterDelete ON employee
+ AFTER  DELETE
+ AS
+ declare @empid int;
+ declare @empname VARCHAR(100);
+ declare @empsal int;
+ declare @log_action VARCHAR(100); 
+ SELECT @empid=i.id,@empname=i.emp_name,@empsal=i.emp_sal from deleted i;
+ set @log_action =’Deleted– After DeleteTrigger.’;
+INSERT INTO log(id,emp_name,emp_sal,log_Action,log_Timestamp)
+ VALUES(@empid,@empname,@empsal,@log_action,getdate());
+PRINT 'AFTER UPDATE TRIGGER FIRED.'
+GO
+
+DELETE FROM employee where emp_name=’Tahir’;
+GO
+
+SELECT * FROM log;
+GO
