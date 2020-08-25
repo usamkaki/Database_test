@@ -1,0 +1,15 @@
+DDL COMMANDS:
+ATLER TABLE employees
+ADD Address VARCHAR(255);
+
+TRUNCATE:
+TRUNCATE TABLE employees;
+
+DROP:
+
+DROP TABLE employees;
+
+RENAME:
+
+ALTER TABLE students
+RENAME TO employee_details;
