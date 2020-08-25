@@ -1,0 +1,62 @@
+CREATE DATABASE employee;
+
+CREATE TABLE employees(
+id INT PRIMARY KEY NOT NULL,
+emp_name VARCHAR(50) NOT NULL,
+emp_sal INT NOT NULL);
+
+INSERT INTO employees VALUES(1,'Rohan',25000);
+
+INSERT INTO employees VALUES(2,'Rehan',35000);
+
+INSERT INTO employees VALUES(3,'Hemanth',26000);
+
+INSERT INTO employees VALUES(4,'pratap',18000);
+
+INSERT INTO employees VALUES(5,'karan',45000);
+
+INSERT INTO employees VALUES(6,'Jai',8000);
+
+INSERT INTO employees VALUES(7,'Ali',35000);
+
+INSERT INTO employees VALUES(8,'Kushal',14000);
+
+DML Commands:
+
+SELECT:
+
+SELECT * FROM employees;
+
+SELECT * FROM employees WHERE emp_name='Rehan';
+
+SELECT * FROM employees WHERE emp_name like 'al%';
+
+SELECT * FROM employees WHERE emp_name like '%r%;
+
+SELECT * FROM employees WHERE emp_sal<10000;
+
+SELECT COUNT(*) WHERE emp_sal>25000;
+
+INSERT:
+
+INSERT INTO employees VALUES(9,'Tahir',23000);
+
+INSERT INTO employees VALUES(7,'Imran',35000);
+
+UPDATE:
+ 
+UPDATE employees
+SET emp_sal=12000
+Where emp_name='jai';
+
+UPDATE employees
+SET emp_name='ali akbar'
+WHERE emp_name='ali' 
+
+DELETE:
+
+DELETE FROM employees
+WHERE emp_name='jai';
+
+
+
