@@ -1,0 +1,28 @@
+Create table techie
+(
+id INT PRIMARY KEY  ,
+designation varchar(50) NOT NULL
+)
+
+
+Insert into techie values (1 , 'Devops Automation');
+Insert into techie values (2 , 'Application Development');
+insert into techie values (3 , 'Cloud Engineering');
+
+
+select *from techie;
+
+
+
+create or replace procedure Insert_batches_data( integer , varchar(50) )
+language plpgsql
+as $$
+begin
+  INSERT INTO techie( id , designation) values($1,$2);
+  COMMIT;
+end;
+$$
+
+call Insert_batches_data(4 , 'Backend Developer');
+
+
