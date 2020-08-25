@@ -1,0 +1,10 @@
+create  procedure Update_Employee_details( integer , integer )
+language plpgsql
+as $$
+begin
+  UPDATE employees  SET salary =$2 where id = $1 ;
+  COMMIT;
+end;
+$$
+
+call Update_Employee_data(11, 135000);
