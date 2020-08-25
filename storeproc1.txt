@@ -1,0 +1,20 @@
+CREATE PROCEDURE insert_data(INT,VARCHAR(50),INT)
+
+LANGUAGE 'plpgsql'
+
+AS $$
+
+BEGIN
+
+INSERT INTO employees(id,emp_name,emp_sal) VALUES ($1,$2);
+
+COMMIT;
+
+END;
+
+CALL insert_data('9',Ruhaan,23000);
+
+CALL insert_data('10',Arshad,23000);
+
+CALL insert_data('11',Rajveer,23000);
+
